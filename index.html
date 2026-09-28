@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="icon-192.png">
   <!-- anonymous visit statistics, no cookies: https://kikiquark.goatcounter.com (src/stats.ts adds game events) -->
   <script data-goatcounter="https://kikiquark.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-  <script type="module" crossorigin src="./assets/index-HXeraJF0.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Dtws4Lyx.css">
+  <script type="module" crossorigin src="./assets/index-BvbyefaW.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CGAtfuz2.css">
 </head>
 <body>
   <header>
@@ -45,18 +45,24 @@
         <h2 data-i18n="newGame">Новая игра</h2>
         <div class="label" data-i18n="size">Размер поля</div>
         <div id="optSize" class="chips"></div>
-        <div class="label" data-i18n="color">Ваш цвет</div>
-        <div id="optColor" class="chips"></div>
-        <div class="label" data-i18n="opponent">Соперник</div>
-        <div id="optLevel" class="chips"></div>
-        <label class="toggle"><input id="optDev" type="checkbox"> <span data-i18n="devToggle">Все алгоритмы (для разработчика)</span></label>
-        <div id="optDevBots" class="devbots"></div>
-        <div id="levelNote" class="muted small"></div>
+        <div class="label" data-i18n="mode">Режим</div>
+        <div id="optMode" class="chips"></div>
+        <div id="botOptions">
+          <div class="label" data-i18n="color">Ваш цвет</div>
+          <div id="optColor" class="chips"></div>
+          <div class="label" data-i18n="opponent">Соперник</div>
+          <div id="optLevel" class="chips"></div>
+          <div id="levelNote" class="muted small"></div>
+        </div>
         <div class="toggle-row">
           <label id="swapLabel" class="toggle"><input id="optSwap" type="checkbox"> <span data-i18n="swapRule">Правило обмена</span></label>
           <button id="swapInfo" class="info-btn" type="button" aria-expanded="false">?</button>
         </div>
         <p id="swapHelp" class="muted help-note" hidden></p>
+        <div id="devOptions">
+          <label class="toggle dev-toggle"><input id="optDev" type="checkbox"> <span data-i18n="devToggle">Все алгоритмы (для разработчика)</span></label>
+          <div id="optDevBots" class="devbots"></div>
+        </div>
         <button id="btnNew" class="primary" data-i18n="start">▶ Начать</button>
       </div>
 

@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="icon-192.png">
   <!-- anonymous visit statistics, no cookies: https://kikiquark.goatcounter.com (src/stats.ts adds game events) -->
   <script data-goatcounter="https://kikiquark.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-  <script type="module" crossorigin src="./assets/index-BvbyefaW.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CGAtfuz2.css">
+  <script type="module" crossorigin src="./assets/index-C96w6WDW.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D_9R9F6e.css">
 </head>
 <body>
   <header>
@@ -37,6 +37,8 @@
         <button id="btnUndo" data-i18n="undo">↩ Отмена</button>
         <button id="btnHint" data-i18n="hint">💡 Подсказка</button>
         <button id="btnSwap" class="accent" hidden data-i18n="swap">🔄 Обмен</button>
+        <button id="btnResign" hidden data-i18n="resign">🏳 Сдаться</button>
+        <button id="btnRematch" class="accent" hidden data-i18n="rematch">🔁 Реванш</button>
       </div>
     </section>
 
@@ -47,9 +49,19 @@
         <div id="optSize" class="chips"></div>
         <div class="label" data-i18n="mode">Режим</div>
         <div id="optMode" class="chips"></div>
-        <div id="botOptions">
+        <div id="onlineOptions" hidden>
+          <div class="label" data-i18n="joinTitle">Есть код приглашения?</div>
+          <div class="join-row">
+            <input id="joinCode" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="K7Q2PX">
+            <button id="btnJoin" type="button" data-i18n="join">Войти</button>
+          </div>
+          <div class="label" data-i18n="orCreate">Или создайте свою партию:</div>
+        </div>
+        <div id="colorOptions">
           <div class="label" data-i18n="color">Ваш цвет</div>
           <div id="optColor" class="chips"></div>
+        </div>
+        <div id="botOptions">
           <div class="label" data-i18n="opponent">Соперник</div>
           <div id="optLevel" class="chips"></div>
           <div id="levelNote" class="muted small"></div>

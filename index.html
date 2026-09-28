@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="icon-192.png">
   <!-- anonymous visit statistics, no cookies: https://kikiquark.goatcounter.com (src/stats.ts adds game events) -->
   <script data-goatcounter="https://kikiquark.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-  <script type="module" crossorigin src="./assets/index-BzJev6Ok.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D5qvhRo0.css">
+  <script type="module" crossorigin src="./assets/index-CDRg12y2.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Dtws4Lyx.css">
 </head>
 <body>
   <header>
@@ -52,7 +52,11 @@
         <label class="toggle"><input id="optDev" type="checkbox"> <span data-i18n="devToggle">Все алгоритмы (для разработчика)</span></label>
         <div id="optDevBots" class="devbots"></div>
         <div id="levelNote" class="muted small"></div>
-        <label class="toggle"><input id="optSwap" type="checkbox"> <span data-i18n="swapRule">Правило обмена</span></label>
+        <div class="toggle-row">
+          <label id="swapLabel" class="toggle"><input id="optSwap" type="checkbox"> <span data-i18n="swapRule">Правило обмена</span></label>
+          <button id="swapInfo" class="info-btn" type="button" aria-expanded="false">?</button>
+        </div>
+        <p id="swapHelp" class="muted help-note" hidden></p>
         <button id="btnNew" class="primary" data-i18n="start">▶ Начать</button>
       </div>
 

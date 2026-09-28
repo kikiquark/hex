@@ -1,0 +1,309 @@
+{
+ "name": "AlphaZero 64x6, ночь 2026-09-28 (az_N11), для полей 11–14",
+ "blocks": 6,
+ "channels": 64,
+ "tensors": [
+  {
+   "name": "stem_w",
+   "shape": [
+    64,
+    3,
+    3,
+    3
+   ],
+   "offset": 0
+  },
+  {
+   "name": "stem_b",
+   "shape": [
+    64
+   ],
+   "offset": 1728
+  },
+  {
+   "name": "b0_w1",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 1792
+  },
+  {
+   "name": "b0_b1",
+   "shape": [
+    64
+   ],
+   "offset": 38656
+  },
+  {
+   "name": "b0_w2",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 38720
+  },
+  {
+   "name": "b0_b2",
+   "shape": [
+    64
+   ],
+   "offset": 75584
+  },
+  {
+   "name": "b1_w1",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 75648
+  },
+  {
+   "name": "b1_b1",
+   "shape": [
+    64
+   ],
+   "offset": 112512
+  },
+  {
+   "name": "b1_w2",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 112576
+  },
+  {
+   "name": "b1_b2",
+   "shape": [
+    64
+   ],
+   "offset": 149440
+  },
+  {
+   "name": "b2_w1",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 149504
+  },
+  {
+   "name": "b2_b1",
+   "shape": [
+    64
+   ],
+   "offset": 186368
+  },
+  {
+   "name": "b2_w2",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 186432
+  },
+  {
+   "name": "b2_b2",
+   "shape": [
+    64
+   ],
+   "offset": 223296
+  },
+  {
+   "name": "b3_w1",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 223360
+  },
+  {
+   "name": "b3_b1",
+   "shape": [
+    64
+   ],
+   "offset": 260224
+  },
+  {
+   "name": "b3_w2",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 260288
+  },
+  {
+   "name": "b3_b2",
+   "shape": [
+    64
+   ],
+   "offset": 297152
+  },
+  {
+   "name": "b4_w1",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 297216
+  },
+  {
+   "name": "b4_b1",
+   "shape": [
+    64
+   ],
+   "offset": 334080
+  },
+  {
+   "name": "b4_w2",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 334144
+  },
+  {
+   "name": "b4_b2",
+   "shape": [
+    64
+   ],
+   "offset": 371008
+  },
+  {
+   "name": "b5_w1",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 371072
+  },
+  {
+   "name": "b5_b1",
+   "shape": [
+    64
+   ],
+   "offset": 407936
+  },
+  {
+   "name": "b5_w2",
+   "shape": [
+    64,
+    64,
+    3,
+    3
+   ],
+   "offset": 408000
+  },
+  {
+   "name": "b5_b2",
+   "shape": [
+    64
+   ],
+   "offset": 444864
+  },
+  {
+   "name": "pol_w",
+   "shape": [
+    2,
+    64,
+    1,
+    1
+   ],
+   "offset": 444928
+  },
+  {
+   "name": "pol_b",
+   "shape": [
+    2
+   ],
+   "offset": 445056
+  },
+  {
+   "name": "pol_out_w",
+   "shape": [
+    1,
+    2,
+    1,
+    1
+   ],
+   "offset": 445058
+  },
+  {
+   "name": "pol_out_b",
+   "shape": [
+    1
+   ],
+   "offset": 445060
+  },
+  {
+   "name": "val_w",
+   "shape": [
+    32,
+    64,
+    1,
+    1
+   ],
+   "offset": 445061
+  },
+  {
+   "name": "val_b",
+   "shape": [
+    32
+   ],
+   "offset": 447109
+  },
+  {
+   "name": "val_fc1_w",
+   "shape": [
+    64,
+    64
+   ],
+   "offset": 447141
+  },
+  {
+   "name": "val_fc1_b",
+   "shape": [
+    64
+   ],
+   "offset": 451237
+  },
+  {
+   "name": "val_fc2_w",
+   "shape": [
+    1,
+    64
+   ],
+   "offset": 451301
+  },
+  {
+   "name": "val_fc2_b",
+   "shape": [
+    1
+   ],
+   "offset": 451365
+  }
+ ]
+}

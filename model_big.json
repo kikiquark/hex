@@ -1,5 +1,6 @@
 {
  "name": "AlphaZero 64x6, ночь 2026-09-28 (az_N11), для полей 11–14",
+ "file": "models/az_N11.npz",
  "blocks": 6,
  "channels": 64,
  "tensors": [

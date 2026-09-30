@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="icon-192.png">
   <!-- anonymous visit statistics, no cookies: https://kikiquark.goatcounter.com (src/stats.ts adds game events) -->
   <script data-goatcounter="https://kikiquark.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-  <script type="module" crossorigin src="./assets/index-zsl4ugQS.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D_9R9F6e.css">
+  <script type="module" crossorigin src="./assets/index-J_45KVDm.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-qZZhlS3n.css">
 </head>
 <body>
   <header>
@@ -31,9 +31,11 @@
   <main>
     <section class="play">
       <div id="roles" class="roles"></div>
+      <div id="clocks" class="clocks" hidden></div>
       <svg id="board" role="img" aria-label="Игровое поле"></svg>
       <div id="status" class="status" aria-live="polite"></div>
       <div class="actions">
+        <button id="btnNewGame" class="accent" type="button" data-i18n="newGameBtn">➕ Новая игра</button>
         <button id="btnUndo" data-i18n="undo">↩ Отмена</button>
         <button id="btnHint" data-i18n="hint">💡 Подсказка</button>
         <button id="btnSwap" class="accent" hidden data-i18n="swap">🔄 Обмен</button>
@@ -43,41 +45,6 @@
     </section>
 
     <aside>
-      <div class="card">
-        <h2 data-i18n="newGame">Новая игра</h2>
-        <div class="label" data-i18n="size">Размер поля</div>
-        <div id="optSize" class="chips"></div>
-        <div class="label" data-i18n="mode">Режим</div>
-        <div id="optMode" class="chips"></div>
-        <div id="onlineOptions" hidden>
-          <div class="label" data-i18n="joinTitle">Есть код приглашения?</div>
-          <div class="join-row">
-            <input id="joinCode" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="K7Q2PX">
-            <button id="btnJoin" type="button" data-i18n="join">Войти</button>
-          </div>
-          <div class="label" data-i18n="orCreate">Или создайте свою партию:</div>
-        </div>
-        <div id="colorOptions">
-          <div class="label" data-i18n="color">Ваш цвет</div>
-          <div id="optColor" class="chips"></div>
-        </div>
-        <div id="botOptions">
-          <div class="label" data-i18n="opponent">Соперник</div>
-          <div id="optLevel" class="chips"></div>
-          <div id="levelNote" class="muted small"></div>
-        </div>
-        <div class="toggle-row">
-          <label id="swapLabel" class="toggle"><input id="optSwap" type="checkbox"> <span data-i18n="swapRule">Правило обмена</span></label>
-          <button id="swapInfo" class="info-btn" type="button" aria-expanded="false">?</button>
-        </div>
-        <p id="swapHelp" class="muted help-note" hidden></p>
-        <div id="devOptions">
-          <label class="toggle dev-toggle"><input id="optDev" type="checkbox"> <span data-i18n="devToggle">Все алгоритмы (для разработчика)</span></label>
-          <div id="optDevBots" class="devbots"></div>
-        </div>
-        <button id="btnNew" class="primary" data-i18n="start">▶ Начать</button>
-      </div>
-
       <div class="card">
         <h2 data-i18n="moves">Ходы</h2>
         <ol id="log" class="log"></ol>
@@ -90,6 +57,51 @@
       </details>
     </aside>
   </main>
+
+  <dialog id="newDialog" class="new-dialog">
+    <div class="dialog-body">
+      <div class="dialog-head">
+        <h2 data-i18n="newGame">Новая игра</h2>
+        <button id="btnCloseNew" class="icon-btn" type="button" aria-label="✕">✕</button>
+      </div>
+      <div class="label" data-i18n="mode">Режим</div>
+      <div id="optMode" class="chips"></div>
+      <div class="label" data-i18n="size">Размер поля</div>
+      <div id="optSize" class="chips"></div>
+      <div id="onlineOptions" hidden>
+        <div class="label" data-i18n="joinTitle">Есть код приглашения?</div>
+        <div class="join-row">
+          <input id="joinCode" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="K7Q2PX">
+          <button id="btnJoin" type="button" data-i18n="join">Войти</button>
+        </div>
+        <div class="label" data-i18n="orCreate">Или создайте свою партию:</div>
+      </div>
+      <div id="colorOptions">
+        <div class="label" data-i18n="color">Ваш цвет</div>
+        <div id="optColor" class="chips"></div>
+      </div>
+      <div id="botOptions">
+        <div class="label" data-i18n="opponent">Соперник</div>
+        <div id="optLevel" class="chips"></div>
+        <div id="levelNote" class="muted small"></div>
+      </div>
+      <div id="clockOptions">
+        <div class="label" data-i18n="timer">Таймер</div>
+        <div id="optClock" class="chips"></div>
+        <div class="muted small" data-i18n="timerHelp"></div>
+      </div>
+      <div class="toggle-row">
+        <label id="swapLabel" class="toggle"><input id="optSwap" type="checkbox"> <span data-i18n="swapRule">Правило обмена</span></label>
+        <button id="swapInfo" class="info-btn" type="button" aria-expanded="false">?</button>
+      </div>
+      <p id="swapHelp" class="muted help-note" hidden></p>
+      <div id="devOptions">
+        <label class="toggle dev-toggle"><input id="optDev" type="checkbox"> <span data-i18n="devToggle">Все алгоритмы (для разработчика)</span></label>
+        <div id="optDevBots" class="devbots"></div>
+      </div>
+      <button id="btnNew" class="primary" data-i18n="start">▶ Начать</button>
+    </div>
+  </dialog>
 
   <details class="card help">
     <summary data-i18n="helpTitle">Справка: боты, их рейтинги и как они работают</summary>

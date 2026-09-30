@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="icon-192.png">
   <!-- anonymous visit statistics, no cookies: https://kikiquark.goatcounter.com (src/stats.ts adds game events) -->
   <script data-goatcounter="https://kikiquark.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-  <script type="module" crossorigin src="./assets/index-BGDkpdTq.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-qZZhlS3n.css">
+  <script type="module" crossorigin src="./assets/index-BGbXk9t7.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CcVqdN81.css">
 </head>
 <body>
   <header>
@@ -25,17 +25,18 @@
     <span class="tools">
       <button id="btnSound" class="icon-btn" type="button"></button>
       <button id="btnLang" class="icon-btn" type="button"></button>
+      <button id="btnRules" class="icon-btn" type="button" data-i18n="rulesBtn">? Правила</button>
+      <button id="btnNewGame" class="icon-btn new" type="button" data-i18n="newGameBtn">＋ Новая игра</button>
     </span>
   </header>
 
   <main>
     <section class="play">
       <div id="roles" class="roles"></div>
-      <div id="clocks" class="clocks" hidden></div>
+      <div id="score" class="score"></div>
       <svg id="board" role="img" aria-label="Игровое поле"></svg>
       <div id="status" class="status" aria-live="polite"></div>
       <div class="actions">
-        <button id="btnNewGame" class="accent" type="button" data-i18n="newGameBtn">➕ Новая игра</button>
         <button id="btnUndo" data-i18n="undo">↩ Отмена</button>
         <button id="btnHint" data-i18n="hint">💡 Подсказка</button>
         <button id="btnSwap" class="accent" hidden data-i18n="swap">🔄 Обмен</button>
@@ -49,12 +50,6 @@
         <h2 data-i18n="moves">Ходы</h2>
         <ol id="log" class="log"></ol>
       </div>
-
-      <details class="card rules">
-        <summary data-i18n="rules">Правила</summary>
-        <p data-i18n-html="rules1"></p>
-        <p data-i18n-html="rules2"></p>
-      </details>
     </aside>
   </main>
 
@@ -101,6 +96,16 @@
       </div>
       <button id="btnNew" class="primary" data-i18n="start">▶ Начать</button>
     </div>
+  </dialog>
+
+  <dialog id="rulesDlg" class="new-dialog rules">
+    <form method="dialog" class="dialog-body">
+      <h2 data-i18n="rules">Правила</h2>
+      <p data-i18n-html="rules1"></p>
+      <p data-i18n-html="rules2"></p>
+      <p data-i18n="rules3"></p>
+      <button value="close" class="primary" data-i18n="rulesOk">Понятно</button>
+    </form>
   </dialog>
 
   <details class="card help">
